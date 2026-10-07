@@ -2,11 +2,11 @@
 
 :root {
     --gradiente-fundo: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    --fundo-cartao: #dbbd0f;
+    --fundo-cartao: #dfc222;
     --cor-texto: #000000;
     --cor-primaria: #000000;
-    --cor-primaria-destaque: #5b4bc4;
-    --cor-borda: #faf2f2;
+    --cor-primaria-destaque: #860000;
+    --cor-borda: #ffffff;
     --cor-perigo: #ff7675;
     --cor-concluido: #000000;
 }
@@ -18,7 +18,7 @@ body.modo-escuro {
     --gradiente-fundo: linear-gradient(135deg, #ffffff 0%, #d9d9d9 100%);
     --fundo-cartao: #000000;
     --cor-texto: #ffffff;
-    --cor-primaria: #000000;
+    --cor-primaria: #aaaaaa;
     --cor-primaria-destaque: #860000;
     --cor-borda: #333333;
     --cor-perigo: #ffffff;
