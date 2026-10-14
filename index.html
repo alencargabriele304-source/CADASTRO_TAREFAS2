@@ -4,55 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meu painel de tarefas</title>
+    <title>Minhas Tarefas</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <div class="cartao-aplicacao">
 
-        <header class="cabecalho-aplicacao">
+    <main class="container">
 
-            <h1>Minhas tarefas 🖊</h1>
+        <header class="cabecalho">
+            <div>
+                <h1>Minhas tarefas <i class="fa-solid fa-pen-to-square"></i></h1>
+                 <img src="IMG_6998.jpeg" alt="Minha foto" class="foto-perfil">
+                <p>Organize suas tarefas do dia!</p>
+            </div>
 
-            <button class="botao-icone" id="botao-alterar-tema">
-                <i class="fa-solid fa-moon"></i>
-            </button>
+            <div class="botoes-topo">
+                <button id="botao-informacoes" title="Sobre as funcionalidades"
+                aria-label="Informações">
+                    <i class="fa-solid fa-circle-info"></i>
+                </button>
 
+                <button id="botao-alterar-tema" title="Alterar tema"
+                aria-label="Alternar tema">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
         </header>
 
-        <div class="caixa-entrada">
+        <section class="resumo">
+            <div class="cartao-resumo">
+                <span id="total-tarefas">0</span>
+                <p>Total</p>
+            </div>
 
+            <div class="cartao-resumo">
+                <span id="tarefas-pendentes">0</span>
+                <p>Pendentes</p>
+            </div>
+
+            <div class="cartao-resumo">
+                <span id="tarefas-concluidas">0</span>
+                <p>Concluídas</p>
+            </div>
+        </section>
+
+        <form id="formulario-tarefas">
             <input
                 type="text"
-                name="campo-tarefas"
                 id="campo-tarefas"
-                placeholder="O que vamos fazer hoje?..."
+                placeholder="Digite uma nova tarefa..."
                 maxlength="40"
+                autocomplete="off"
+                required
             >
 
-            <button class="botao-principal" id="botao-adicionar">
+            <button type="submit" id="botao-adicionar">
                 <i class="fa-solid fa-plus"></i>
                 Adicionar
             </button>
+        </form>
 
-        </div>
-        <ul class="lista-tarefas" id="lista-tarefas">
-            <!-- As tarefas serão inseridas dinamicamente via JavaScript -->
-        </ul>
-        <footer class="rodape-aplicacao">
-            <span id="contador-tarefas">0 tarefas na lista</span>
+        <section class="area-tarefas">
+
+            <div class="titulo-lista">
+                <h2>Minha lista</h2>
+                <span id="contador-tarefas">0 tarefas</span>
+            </div>
+
+            <div class="filtros">
+                <button type="button" class="botao-filtro ativo"
+                data-filtro="todas">Todas</button>
+
+                <button type="button" class="botao-filtro"
+                data-filtro="pendentes">Pendentes</button>
+
+                <button type="button" class="botao-filtro"
+                data-filtro="concluidas">Concluídas</button>
+            </div>
+
+            <ul id="lista-tarefas"></ul>
+
+            <p id="mensagem-vazia">
+                <i class="fa-regular fa-clipboard"></i>
+                <br>
+                Nenhuma tarefa cadastrada.
+            </p>
+
+        </section>
+
+        <footer>
+            <i class="fa-solid fa-floppy-disk"></i>
+            Suas tarefas ficam salvas neste navegador.
         </footer>
-    </div>
+
+    </main>
+
+    <dialog id="modal-informacoes">
+
+        <div class="modal-cabecalho">
+            <h2><i class="fa-solid fa-circle-info"></i> Sobre o cadastro</h2>
+
+            <button id="fechar-informacoes" class="botao-fechar"
+            aria-label="Fechar janela">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <p>Este cadastro possui funcionalidades extras para facilitar
+        a organização das tarefas.</p>
+
+        <div class="informacao">
+            <i class="fa-solid fa-filter"></i>
+            <div>
+                <h3>RF01 — Filtros</h3>
+                <p>Permite visualizar todas as tarefas, somente as pendentes
+                ou apenas as concluídas.</p>
+            </div>
+        </div>
+
+        <div class="informacao">
+            <i class="fa-solid fa-pen"></i>
+            <div>
+                <h3>RF02 — Edição</h3>
+                <p>Permite alterar o texto de uma tarefa já cadastrada.</p>
+            </div>
+        </div>
+
+        <div class="informacao">
+            <i class="fa-solid fa-floppy-disk"></i>
+            <div>
+                <h3>Armazenamento local</h3>
+                <p>As tarefas são guardadas no navegador usando localStorage.</p>
+            </div>
+        </div>
+
+        <button id="botao-entendi">Entendi!</button>
+
+    </dialog>
+
     <script src="script.js"></script>
 
-    <section class="foto-final">
-        <img src="IMG_6998.jpeg" alt="Minha foto">
-    </section>
 </body>
 </html>
-
-
